@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora com Histórico</title>
+</head>
+<body>
+
+    <form method="POST" action="calcular">        
+        <input type="text" name="operando1" id="operando1"/>
+        <input type="text" name="operador" id="operador"/>
+        <input type="text" name="operando2" id="operando2"/>
+        <input type="submit"/>
+    </form>
+    
+    <div th:text="${resultado}"></div>
+
+    <ul>
+        <li th:each="item : ${historico}" th:text="${item}"></li>
+    </ul>
+</body>
+</html>
